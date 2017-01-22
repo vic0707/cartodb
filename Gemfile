@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use Simple form for form to load data
 gem 'simple_form'
+# Use httparty for consuming API
+gem 'httparty'
 
 
 
@@ -45,6 +47,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Use these gems for better error information
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 group :development do
