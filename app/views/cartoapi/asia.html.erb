@@ -1,20 +1,5 @@
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12 col-md-4">
-			<h1>CartoDB Table viewer</h1>
-		</div>
-		<%= simple_form_for :user, url: search_path, method: 'post' do |f| %>
-		<div class="col-xs-12 col-md-3">
-			<%= f.input :username %>
-		</div>
-		<div class="col-xs-12 col-md-3">
-			<%= f.input :table %>
-		</div>
-		<div class="col-xs-12 col-md-2">
-			<%= f.button :submit, class: "btn btn-primary btn-lg", label: "Load data" %>
-		</div>
-		<% end %>
-	</div>
+<div class="container margin-top">
+	<%= render 'load' %>
 	<div class="row">
 		<div class="col-xs-12">
 			<table class="table table-hover">

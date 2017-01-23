@@ -1,0 +1,27 @@
+<div class="container margin-top">
+	<%= render 'load' %>
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="table table-hover">
+				<tr>
+					<th>#</th>
+					<th>Country Name</th>
+					<th>Country Initials</th>
+				</tr>
+				<% response["rows"].each do |line| %>
+				<tr>
+					<td><%= line["cartodb_id"] %></td>
+					<td><p><%= line["name"] %></p></td>
+					<td><p><%= line["iso_alpha3"] %></p></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-2 col-md-offset-4">
+			<%= link_to "Previous", search_path(to_do: "previous", page: page, username: username, table: table), method: 'post', class: "btn btn-primary" %>
+			<%= link_to "Next", search_path(to_do: "next", page: page, username: username, table: table), method: 'post', class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
