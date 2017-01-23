@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 @import "layout/navbar";
 @import "components/banner";
+@import "cartoapi/search";
