@@ -1,23 +1,7 @@
 <div class="container margin-top">
 	<%= render 'load' %>
-	<div class="row">
-		<div class="col-xs-12">
-			<table class="table table-hover">
-				<tr>
-					<th>#</th>
-					<th>Country Name</th>
-					<th>Country Initials</th>
-				</tr>
-				<% response["rows"].each do |line| %>
-				<tr>
-					<td><%= line["cartodb_id"] %></td>
-					<td><p><%= line["admin"] %></p></td>
-					<td><p><%= line["adm0_a3"] %></p></td>
-				</tr>
-				<% end %>
-			</table>
-		</div>
-	</div>
+	<%= react_component('CountryList', {response: response} )%>
+
 	<div class="row">
 		<div class="col-xs-12 col-md-2 col-md-offset-4">
 			<%= link_to "Previous", search_path(to_do: "previous", page: page, username: username, table: table), method: 'post', class: "btn btn-primary" %>

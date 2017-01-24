@@ -17,18 +17,12 @@ class CartoapiController < ApplicationController
 			@table = params[:user][:table]
 			@response = api_call( @username, @table, @page)
 		end
-		if  @response.first[0] != "error"
-			render_country(@response, @page, @username, @table)
+		if  @response
+			render "cartoapi/search", locals: {response: @response, page: @page, username: @username, table: @table}
 		else
 			redirect_to root_path
 		end
 	end
 
 	private
-
-	def render_country(response, page, username, table)
-		if table.include?("asia") || table.include?("africa") || table.include?("europe") || table.include?("america") || table.include?("oceania") 
-			render "cartoapi/#{table}", locals: {response: response, page: page, username: username, table: table}
-		end
-	end
 end
