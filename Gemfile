@@ -26,9 +26,13 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 # Use httparty for consuming API
 gem 'httparty'
+# Use following gems for React on Rails
+gem 'js-routes', '~> 1.3'
+gem 'react-rails', '~> 1.8'
 
-
-
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
